@@ -74,3 +74,8 @@ This build is done using Ubuntu 13.10 32 bits.
 	rm *.bz2 *.gz  
 
 #### Step-by-step build ####
+
+1. Install the generic libraries `gmp`, `mpfr` and `mpc`.
+
+	
+	
