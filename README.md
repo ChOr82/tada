@@ -28,7 +28,7 @@ This build is done using Ubuntu 13.10 32 bits.
 	mkdir downloads  
 	cd downloads  
 	
-	1. **m4**. <ftp://ftp.gnu.org/gnu/m4/m4-1.4.tar.gz>
+	1. **m4**. <ftp://ftp.gnu.org/gnu/m4/m4-1.4.17.tar.gz>
 	2. **gmp**. <https://gmplib.org/download/gmp/gmp-5.1.3.tar.bz2>
 	3. **mpfr**. <ftp://ftp.gnu.org/gnu/mpfr/mpfr-3.1.2.tar.gz>
 	4. **mpc**. <ftp://ftp.gnu.org/gnu/mpc/mpc-1.0.2.tar.gz>
@@ -36,7 +36,7 @@ This build is done using Ubuntu 13.10 32 bits.
 	6. **automake**. <ftp://ftp.gnu.org/gnu/automake/automake-1.9.tar.bz2>
 	7. **binutils**. <ftp://ftp.gnu.org/gnu/binutils/binutils-2.9.1.tar.gz>
 	8. **gcc**. <ftp://ftp.gnu.org/gnu/gcc/gcc-4.8.2/gcc-4.8.2.tar.gz>
-	
+	9. **lex**. <http://prdownloads.sourceforge.net/flex/flex-2.5.37.tar.gz?download>
 	9. **gnat-gpl**
 		
 	cd ..
