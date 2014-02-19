@@ -28,6 +28,10 @@ This build is done using Ubuntu 13.10 32 bits.
 	mkdir downloads  
 	cd downloads  
 	
+	- **m4**. 
+	
+		wget ftp://ftp.gnu.org/gnu/m4/m4-1.4.tar.gz
+
 	1. **gmp**. We used <https://gmplib.org/download/gmp/gmp-5.1.3.tar.bz2>. But a newer version could be downloaded from <https://gmplib.org/download/gmp/>.
 	
 		wget https://gmplib.org/download/gmp/gmp-5.1.3.tar.bz2
@@ -73,20 +77,32 @@ This build is done using Ubuntu 13.10 32 bits.
 	tar jxf gmp-5.1.3.tar.bz2  
 	tar zxf mpc-1.0.2.tar.gz  
 	tar jxf mpfr-3.1.0.tar.bz2  
+	tar zxf m4-1.4.tar.gz  
 	rm *.bz2 *.gz  
 
 #### Step-by-step build ####
 
 1. Install the generic libraries `gmp`, `mpfr` and `mpc`.
 
+	mkdir gcc-native
+
+	cd m4-1.4  
+	./configure --prefix=/opt/tada/gcc-native  
+	make  
+	make install  
+	# installation ok
+	
 	cd gmp-5.1.3  
-	./configure  
+	./configure --prefix=/opt/tada/gcc-native  
 	make  
-	sudo make install  
-  
+	make install  
+	# installation ok  
+
 	cd ../mpfr-3.1.0  
-	./configure  
+	./configure --prefix=/opt/tada/gcc-native  
 	make  
+	# now an error occurred
+
 	sudo make install  
   
 	cd ../mpc-1.0.2  
