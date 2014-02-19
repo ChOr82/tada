@@ -64,6 +64,8 @@ This build is done using Ubuntu 13.10 32 bits.
 
 	mkdir sources  
 	cp downloads/* sources/  
+	cd sources
+
 	tar zxf autoconf-2.69.tar.gz  
 	tar jxf automake-1.9.tar.bz2  
 	tar zxf binutils-2.9.1.tar.gz  
@@ -76,6 +78,56 @@ This build is done using Ubuntu 13.10 32 bits.
 #### Step-by-step build ####
 
 1. Install the generic libraries `gmp`, `mpfr` and `mpc`.
+
+	cd gmp-5.1.3  
+	./configure  
+	make  
+	sudo make install  
+  
+	cd ../mpfr-3.1.0  
+	./configure  
+	make  
+	sudo make install  
+  
+	cd ../mpc-1.0.2  
+	./configure  
+	make  
+	sudo make install  
+
+	cd ..  
+
+2. Install `automake`, `autoconf` and `binutils`
+
+	mkdir target  
+
+	cd automake-1.9  
+	./configure --prefix=/opt/tada/target  
+	make  
+	make install  
+	
+	cd ../autoconf-2.69  
+	./configure --prefix=/opt/tada/target  
+	make  
+	make install  
+
+	cd ../binutils-2.9.1  
+	./configure --prefix=/opt/tada/target  
+	make  
+	make install  
+
+	cd ..  
+
+3. Add `target/bin` folder to the PATH.
+
+	PATH=/opt/tada/target/bin:$PATH
+
+4. Build the native gcc compiler.
+
+	mkdir gcc-native
+	cd gcc-native
+	../sources/gcc-4.8.2/configure --prefix=/opt/tada/target --enable-languages=c,ada,lto --no-recursion
+	make
+	# it can take lots of time here.
 
 	
 	
