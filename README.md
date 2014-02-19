@@ -53,7 +53,7 @@ This build is done using Ubuntu 13.10 32 bits.
 	tar zxf gcc-4.8.2.tar.gz  
 	tar jxf gmp-5.1.3.tar.bz2  
 	tar zxf mpc-1.0.2.tar.gz  
-	tar jxf mpfr-3.1.0.tar.bz2  
+	tar zxf mpfr-3.1.2.tar.gz  
 	tar zxf m4-1.4.tar.gz  
 	rm *.bz2 *.gz  
 
@@ -75,15 +75,14 @@ This build is done using Ubuntu 13.10 32 bits.
 	make install  
 	# installation ok  
 
-	cd ../mpfr-3.1.0  
-	./configure --prefix=/opt/tada/gcc-native  
+	cd ../mpfr-3.1.2  
+	./configure --prefix=/opt/tada/gcc-native --with-gmp=/opt/tada/gcc-native
 	make  
-	# now an error occurred
+	make install  
+  	# installation ok  
 
-	sudo make install  
-  
 	cd ../mpc-1.0.2  
-	./configure  
+	./configure --prefix=/opt/tada/gcc-native --with-gmp=/opt/tada/gcc-native  
 	make  
 	sudo make install  
 
