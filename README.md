@@ -28,16 +28,39 @@ This build is done using Ubuntu 13.10 32 bits.
 	mkdir downloads  
 	cd downloads  
 	
-	1. **m4**. <ftp://ftp.gnu.org/gnu/m4/m4-1.4.tar.gz>
-	2. **gmp**. <https://gmplib.org/download/gmp/gmp-5.1.3.tar.bz2>
-	3. **mpfr**. <ftp://ftp.gnu.org/gnu/mpfr/mpfr-3.1.2.tar.gz>
-	4. **mpc**. <ftp://ftp.gnu.org/gnu/mpc/mpc-1.0.2.tar.gz>
-	5. **autoconf**. <ftp://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.gz>
-	6. **automake**. <ftp://ftp.gnu.org/gnu/automake/automake-1.9.tar.bz2>
-	7. **binutils**. <ftp://ftp.gnu.org/gnu/binutils/binutils-2.9.1.tar.gz>
-	8. **gcc**. <ftp://ftp.gnu.org/gnu/gcc/gcc-4.8.2/gcc-4.8.2.tar.gz>
+	- **m4**. 
 	
-	9. **gnat-gpl**
+		wget ftp://ftp.gnu.org/gnu/m4/m4-1.4.tar.gz
+
+	1. **gmp**. We used <https://gmplib.org/download/gmp/gmp-5.1.3.tar.bz2>. But a newer version could be downloaded from <https://gmplib.org/download/gmp/>.
+	
+		wget https://gmplib.org/download/gmp/gmp-5.1.3.tar.bz2
+
+	2. **mpfr**. We used <http://www.mpfr.org/mpfr-3.1.0/mpfr-3.1.0.tar.gz>. But a newer version could be downloaded from <http://www.mpfr.org/>.
+		
+		wget http://www.mpfr.org/mpfr-3.1.0/mpfr-3.1.0.tar.bz2
+		
+	3. 	**mpc**. We used <ftp://ftp.gnu.org/gnu/mpc/mpc-1.0.2.tar.gz>. But a newer version could be downloaded from <http://www.multiprecision.org/index.php?prog=mpc&page=download>
+	
+		wget ftp://ftp.gnu.org/gnu/mpc/mpc-1.0.2.tar.gz
+		
+	4. **autoconf**. We used autoconf-2.69.
+
+		wget ftp://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.gz
+		
+	5. **automake**. We used automake-1.9.
+	
+		wget ftp://ftp.gnu.org/gnu/automake/automake-1.9.tar.bz2
+		
+	6. **binutils**. We used binutils-2.9.1.
+	
+		wget ftp://ftp.gnu.org/gnu/binutils/binutils-2.9.1.tar.gz
+
+	7. **gcc**. We used gcc-4.8.2. But a newer version could be downloaded from <ftp://ftp.gnu.org/gnu/gcc/>.
+	
+		wget ftp://ftp.gnu.org/gnu/gcc/gcc-4.8.2/gcc-4.8.2.tar.gz
+	
+	8. **gnat-gpl**
 		
 	cd ..
 	
@@ -85,6 +108,7 @@ This build is done using Ubuntu 13.10 32 bits.
 	./configure --prefix=/opt/tada/gcc-native --with-gmp=/opt/tada/gcc-native  
 	make  
 	sudo make install  
+	# installation ok
 
 	cd ..  
 
