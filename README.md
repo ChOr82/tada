@@ -60,13 +60,17 @@ This build is done using Ubuntu 13.10 32 bits.
 		
 	cd ..
 	
-3. Create a `tada/sources` to keep the sources from the libraries. Copy the files from the `tada/downloads` folder to it, and unpack them.
+3. Create a folder `tada/sources` to keep the sources from the libraries. Copy the files from the `tada/downloads` folder to it, and unpack them.
 
 	mkdir sources
 	cp downloads/* sources/
 	tar zxf autoconf-2.69.tar.gz
 	tar jxf automake-1.9.tar.bz2
 	tar zxf binutils-2.9.1.tar.gz
-	
-	
+	tar zxf gcc-4.8.2.tar.gz
+	tar jxf gmp-5.1.3.tar.bz2
+	tar zxf mpc-1.0.2.tar.gz
+	tar jxf mpfr-3.1.0.tar.bz2
+	rm *.bz2 *.gz
+
 #### Step-by-step build ####
