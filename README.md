@@ -54,7 +54,7 @@ This build is done using Ubuntu 13.10 32 bits.
 	tar jxf gmp-5.1.3.tar.bz2  
 	tar zxf mpc-1.0.2.tar.gz  
 	tar zxf mpfr-3.1.2.tar.gz  
-	tar zxf m4-1.4.tar.gz 
+	tar zxf m4-1.4.17.tar.gz 
 	tar zxf flex-2.5.37.tar.gz
 	
 	rm *.bz2 *.gz  
@@ -65,7 +65,7 @@ This build is done using Ubuntu 13.10 32 bits.
 
 	mkdir gcc-native
 
-	cd m4-1.4  
+	cd m4-1.4.17  
 	./configure --prefix=/opt/tada/gcc-native  
 	make  
 	make install  
