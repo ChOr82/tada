@@ -15,7 +15,9 @@ echo "===========================================================" && echo
 
 ############################################### 
 curr_lib=m4-1.4.17
+echo "=================================="
 echo "Install $curr_lib. Continue? (y/n)"
+echo "=================================="
 read user_option
 
 if test $user_option = "y"
@@ -29,7 +31,9 @@ fi
 
 ############################################### 
 curr_lib=gmp-5.1.3
+echo "=================================="
 echo "Install $curr_lib. Continue? (y/n)"
+echo "=================================="
 read user_option
 
 if test $user_option = "y"
@@ -43,7 +47,9 @@ fi
 
 ############################################### 
 curr_lib=mpfr-3.1.2
+echo "=================================="
 echo "Install $curr_lib. Continue? (y/n)"
+echo "=================================="
 read user_option
 
 if test $user_option = "y"
@@ -57,7 +63,9 @@ fi
 
 ############################################### 
 curr_lib=mpc-1.0.2
+echo "=================================="
 echo "Install $curr_lib. Continue? (y/n)"
+echo "=================================="
 read user_option
 
 if test $user_option = "y"
@@ -71,7 +79,9 @@ fi
 
 ############################################### 
 curr_lib=automake-1.9
+echo "=================================="
 echo "Install $curr_lib. Continue? (y/n)"
+echo "=================================="
 read user_option
 
 if test $user_option = "y"
@@ -85,7 +95,9 @@ fi
 	
 ############################################### 
 curr_lib=autoconf-2.69
+echo "=================================="
 echo "Install $curr_lib. Continue? (y/n)"
+echo "=================================="
 read user_option
 
 if test $user_option = "y"
@@ -99,7 +111,9 @@ fi
 
 ############################################### 
 curr_lib=flex-2.5.37
+echo "=================================="
 echo "Install $curr_lib. Continue? (y/n)"
+echo "=================================="
 read user_option
 
 if test $user_option = "y"
@@ -113,7 +127,9 @@ fi
 
 ############################################### 
 curr_lib=binutils-2.24
+echo "=================================="
 echo "Install $curr_lib. Continue? (y/n)"
+echo "=================================="
 read user_option
 
 if test $user_option = "y"
@@ -127,7 +143,9 @@ fi
 
 
 ############################################### 
+echo "=========================================================="
 echo "This step will include $gccnative in PATH. Continue? (y/n)"
+echo "=========================================================="
 read user_option
 
 if test $user_option = "y"
