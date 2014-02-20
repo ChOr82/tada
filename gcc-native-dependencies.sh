@@ -1,51 +1,141 @@
 #!/bin/bash
 
-cd /opt/tada/sources
+targetbase="/opt/tada"
+gccnative="$targetbase/gcc-native"
 curr_lib="none"
 
-echo "Installation from gcc dependencies will start for libraries"
-echo "==========================================================="
 
-curr_lib="m4-1.4.17"
+cd $targetbase/sources
+
+clear
+
+echo "==========================================================="
+echo "Installation from gcc dependencies will start for libraries"
+echo "===========================================================" && echo
+
+############################################### 
+curr_lib=m4-1.4.17
 echo "Install $curr_lib. Continue? (y/n)"
 read user_option
 
-if ("$user_option" == "y") then
+if test $user_option = "y"
+then
 	cd $curr_lib
-	./configure --prefix=/opt/tada/gcc-native
+	./configure --prefix=$gccnative
 	make && make check && make install
 else
 	echo "Ok. Finished."
-	exit
 fi
 
-#cd ../gmp-5.1.3
-#./configure --prefix=/opt/tada/gcc-native
-#make && make check && make install
+############################################### 
+curr_lib=gmp-5.1.3
+echo "Install $curr_lib. Continue? (y/n)"
+read user_option
 
-#cd ../mpfr-3.1.2
-#./configure --prefix=/opt/tada/gcc-native --with-gmp=/opt/tada/gcc-native
-#make && make check && make install
+if test $user_option = "y"
+then
+	cd $curr_lib
+	./configure --prefix=$gccnative
+	make && make check && make install
+else
+	echo "Ok. Finished."
+fi
 
-#cd ../mpc-1.0.2
-#./configure --prefix=/opt/tada/gcc-native
-#make && make check && make install
+############################################### 
+curr_lib=mpfr-3.1.2
+echo "Install $curr_lib. Continue? (y/n)"
+read user_option
 
-#cd ../automake-1.9
-#./configure --prefix=/opt/tada/gcc-native
-#make && make check && make install
+if test $user_option = "y"
+then
+	cd $curr_lib
+	./configure --prefix=$gccnative --with-gmp=$gccnative
+	make && make check && make install
+else
+	echo "Ok. Finished."
+fi
+
+############################################### 
+curr_lib=mpc-1.0.2
+echo "Install $curr_lib. Continue? (y/n)"
+read user_option
+
+if test $user_option = "y"
+then
+	cd $curr_lib
+	./configure --prefix=$gccnative
+	make && make check && make install
+else
+	echo "Ok. Finished."
+fi
+
+############################################### 
+curr_lib=automake-1.9
+echo "Install $curr_lib. Continue? (y/n)"
+read user_option
+
+if test $user_option = "y"
+then
+	cd $curr_lib
+	./configure --prefix=$gccnative
+	make && make check && make install
+else
+	echo "Ok. Finished."
+fi
 	
-#cd ../autoconf-2.69
-#./configure --prefix=/opt/tada/gcc-native
-#make && make check && make install
+############################################### 
+curr_lib=autoconf-2.69
+echo "Install $curr_lib. Continue? (y/n)"
+read user_option
 
-#cd ../flex-2.5.37
-#./configure --prefix=/opt/tada/gcc-native
-#make && make check && make install
+if test $user_option = "y"
+then
+	cd $curr_lib
+	./configure --prefix=$gccnative
+	make && make check && make install
+else
+	echo "Ok. Finished."
+fi
 
-#cd ../binutils-2.24
-#./configure --prefix=/opt/tada/gcc-native --verbose --disable-nls --target=arm-none-eabi
-#make && make check && make install
+############################################### 
+curr_lib=flex-2.5.37
+echo "Install $curr_lib. Continue? (y/n)"
+read user_option
 
-PATH=/opt/tada/gcc-native/bin:$PATH
+if test $user_option = "y"
+then
+	cd $curr_lib
+	./configure --prefix=$gccnative
+	make && make check && make install
+else
+	echo "Ok. Finished."
+fi
+
+############################################### 
+curr_lib=binutils-2.24
+echo "Install $curr_lib. Continue? (y/n)"
+read user_option
+
+if test $user_option = "y"
+then
+	cd $curr_lib
+	./configure --prefix=$gccnative --verbose --disable-nls --target=arm-none-eabi
+	make && make check && make install
+else
+	echo "Ok. Finished."
+fi
+
+
+############################################### 
+echo "This step will include $gccnative in PATH. Continue? (y/n)"
+read user_option
+
+if test $user_option = "y"
+then
+	PATH=$gccnative/bin:$PATH
+else
+	echo "Ok. Finished."
+fi
+
+
 
