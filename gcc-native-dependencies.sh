@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /opt/tada
+cd /opt/tada/sources
 
 cd m4-1.4.17
 ./configure --prefix=/opt/tada/gcc-native
