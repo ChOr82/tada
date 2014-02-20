@@ -1,7 +1,7 @@
 #!/bin/bash
 
 targetbase="/opt/tada"
-gccnative="$targetbase/gcc-native"
+gcclibs="$targetbase/gcc-libs"
 curr_lib="none"
 
 
@@ -9,9 +9,9 @@ cd $targetbase/sources
 
 clear
 
-echo "==========================================================="
-echo "Installation from gcc dependencies will start for libraries"
-echo "===========================================================" && echo
+echo "==============================================================="
+echo "= Installation from gcc dependencies will start for libraries ="
+echo "===============================================================" && echo
 
 ############################################### 
 curr_lib=m4-1.4.17
@@ -23,7 +23,7 @@ read user_option
 if test $user_option = "y"
 then
 	cd $curr_lib
-	./configure --prefix=$gccnative
+	./configure --prefix=$gcclibs
 	make && make check && make install
 else
 	echo "Ok. Finished."
@@ -39,7 +39,7 @@ read user_option
 if test $user_option = "y"
 then
 	cd $curr_lib
-	./configure --prefix=$gccnative
+	./configure --prefix=$gcclibs
 	make && make check && make install
 else
 	echo "Ok. Finished."
@@ -55,7 +55,7 @@ read user_option
 if test $user_option = "y"
 then
 	cd $curr_lib
-	./configure --prefix=$gccnative --with-gmp=$gccnative
+	./configure --prefix=$gcclibs --with-gmp=$gcclibs
 	make && make check && make install
 else
 	echo "Ok. Finished."
@@ -71,7 +71,7 @@ read user_option
 if test $user_option = "y"
 then
 	cd $curr_lib
-	./configure --prefix=$gccnative
+	./configure --prefix=$gcclibs
 	make && make check && make install
 else
 	echo "Ok. Finished."
@@ -87,7 +87,7 @@ read user_option
 if test $user_option = "y"
 then
 	cd $curr_lib
-	./configure --prefix=$gccnative
+	./configure --prefix=$gcclibs
 	make && make check && make install
 else
 	echo "Ok. Finished."
@@ -103,7 +103,7 @@ read user_option
 if test $user_option = "y"
 then
 	cd $curr_lib
-	./configure --prefix=$gccnative
+	./configure --prefix=$gcclibs
 	make && make check && make install
 else
 	echo "Ok. Finished."
@@ -119,7 +119,7 @@ read user_option
 if test $user_option = "y"
 then
 	cd $curr_lib
-	./configure --prefix=$gccnative
+	./configure --prefix=$gcclibs
 	make && make check && make install
 else
 	echo "Ok. Finished."
@@ -135,7 +135,7 @@ read user_option
 if test $user_option = "y"
 then
 	cd $curr_lib
-	./configure --prefix=$gccnative --verbose --disable-nls --target=arm-none-eabi
+	./configure --prefix=$gcclibs --verbose --disable-nls --target=arm-none-eabi
 	make && make check && make install
 else
 	echo "Ok. Finished."
@@ -144,13 +144,13 @@ fi
 
 ############################################### 
 echo "=========================================================="
-echo "This step will include $gccnative in PATH. Continue? (y/n)"
+echo "This step will include $gcclibs in PATH. Continue? (y/n)"
 echo "=========================================================="
 read user_option
 
 if test $user_option = "y"
 then
-	PATH=$gccnative/bin:$PATH
+	PATH=$gcclibs/bin:$PATH
 else
 	echo "Ok. Finished."
 fi
