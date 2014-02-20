@@ -2,6 +2,7 @@
 
 targetbase="/opt/tada"
 gcclibs="$targetbase/gcc-libs"
+gccsources="$targetbase/sources"
 curr_lib="none"
 
 
@@ -22,7 +23,7 @@ read user_option
 
 if test $user_option = "y"
 then
-	cd $curr_lib
+	cd $gccsources/$curr_lib
 	./configure --prefix=$gcclibs
 	make && make check && make install
 else
@@ -38,9 +39,7 @@ read user_option
 
 if test $user_option = "y"
 then
-	cd $curr_lib
-	echo "./configure --prefix=$gcclibs"
-	read
+	cd $gccsources/$curr_lib
 	./configure --prefix=$gcclibs
 	make && make check && make install
 else
@@ -56,7 +55,7 @@ read user_option
 
 if test $user_option = "y"
 then
-	cd $curr_lib
+	cd $gccsources/$curr_lib
 	./configure --prefix=$gcclibs --with-gmp=$gcclibs
 	make && make check && make install
 else
@@ -72,7 +71,7 @@ read user_option
 
 if test $user_option = "y"
 then
-	cd $curr_lib
+	cd $gccsources/$curr_lib
 	./configure --prefix=$gcclibs
 	make && make check && make install
 else
@@ -88,7 +87,7 @@ read user_option
 
 if test $user_option = "y"
 then
-	cd $curr_lib
+	cd $gccsources/$curr_lib
 	./configure --prefix=$gcclibs
 	make && make check && make install
 else
@@ -104,7 +103,7 @@ read user_option
 
 if test $user_option = "y"
 then
-	cd $curr_lib
+	cd $gccsources/$curr_lib
 	./configure --prefix=$gcclibs
 	make && make check && make install
 else
@@ -120,7 +119,7 @@ read user_option
 
 if test $user_option = "y"
 then
-	cd $curr_lib
+	cd $gccsources/$curr_lib
 	./configure --prefix=$gcclibs
 	make && make check && make install
 else
@@ -136,7 +135,7 @@ read user_option
 
 if test $user_option = "y"
 then
-	cd $curr_lib
+	cd $gccsources/$curr_lib
 	./configure --prefix=$gcclibs --verbose --disable-nls --target=arm-none-eabi
 	make && make check && make install
 else
