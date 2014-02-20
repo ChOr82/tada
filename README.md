@@ -93,36 +93,34 @@ This build is done using Ubuntu 13.10 32 bits.
 
 2. Install `automake`, `autoconf` and `binutils`
 
-	mkdir target  
-
 	cd automake-1.9  
-	./configure --prefix=/opt/tada/target  
+	./configure --prefix=/opt/tada/gcc-native  
 	make  
 	make install  
 	- installation ok
 	
 	cd ../autoconf-2.69  
-	./configure --prefix=/opt/tada/target  
+	./configure --prefix=/opt/tada/gcc-native  
 	make  
 	make install  
 	- installation ok
 	
 	-- maybe not needed
 	cd ../flex-2.5.37
-	./configure --prefix=/opt/tada/target  
+	./configure --prefix=/opt/tada/gcc-native  
 	make  
 	make install  
 	
 	cd ../binutils-2.24  
-	./configure --prefix=/opt/tada/target  
+	./configure --prefix=/opt/tada/gcc-native  
 	make  
 	make install  
 
 	cd ..  
 
-3. Add `target/bin` folder to the PATH.
+3. Add `gcc-native/bin` folder to the PATH.
 
-	PATH=/opt/tada/target/bin:$PATH
+	PATH=/opt/tada/gcc-native/bin:$PATH
 
 4. Build the native gcc compiler.
 

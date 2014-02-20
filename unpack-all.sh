@@ -14,7 +14,7 @@ tar zxf gcc-4.8.2.tar.gz
 tar jxf gmp-5.1.3.tar.bz2
 tar zxf mpc-1.0.2.tar.gz
 tar zxf mpfr-3.1.2.tar.gz
-tar zxf m4-1.4.tar.gz 
+tar zxf m4-1.4.17.tar.gz 
 #tar zxf flex-2.5.37.tar.gz
 
 rm *.gz *.bz2
