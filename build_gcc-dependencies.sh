@@ -1,160 +1,145 @@
 #!/bin/bash
 
-targetbase="/opt/tada"
-gcclibs="$targetbase/gcc-libs"
-gccsources="$targetbase/sources"
-curr_lib="none"
-
-
-cd $targetbase/sources
+PROJECT_PATH="/opt/tada"
+PROJECT_LIBS="$PROJECT_PATH/gcc-libs"
+PROJECT_SRCS="$PROJECT_PATH/sources"
+CURRENT_LIBR="none"
+export PATH=$PROJECT_LIBS/bin:$PATH
 
 clear
-
 echo "==============================================================="
 echo "= Installation from gcc dependencies will start for libraries ="
 echo "===============================================================" && echo
 
 ############################################### 
-curr_lib="m4-1.4.17"
+CURRENT_LIBR="m4-1.4.17"
 echo "=================================="
-echo "Install $curr_lib. Continue? (y/n)"
+echo "Install $CURRENT_LIBR. Continue? (y/n)"
 echo "=================================="
 read user_option
 
 if test $user_option = "y"
 then
-	cd $gccsources/$curr_lib
-	./configure --prefix=$gcclibs
+	cd $PROJECT_SRCS/$CURRENT_LIBR
+	./configure --prefix=$PROJECT_LIBS
 	make && make check && make install
 else
 	echo "Ok. Finished."
 fi
 
 ############################################### 
-curr_lib="gmp-5.1.3"
+CURRENT_LIBR="gmp-5.1.3"
 echo "=================================="
-echo "Install $curr_lib. Continue? (y/n)"
+echo "Install $CURRENT_LIBR. Continue? (y/n)"
 echo "=================================="
 read user_option
 
 if test $user_option = "y"
 then
-	cd $gccsources/$curr_lib
-	./configure --prefix=$gcclibs
+	cd /opt/tada/sources/$CURRENT_LIBR
+	./configure --prefix=$PROJECT_LIBS
 	make && make check && make install
 else
 	echo "Ok. Finished."
 fi
 
 ############################################### 
-curr_lib="mpfr-3.1.2"
+CURRENT_LIBR="mpfr-3.1.2"
 echo "=================================="
-echo "Install $curr_lib. Continue? (y/n)"
+echo "Install $CURRENT_LIBR. Continue? (y/n)"
 echo "=================================="
 read user_option
 
 if test $user_option = "y"
 then
-	cd $gccsources/$curr_lib
-	./configure --prefix=$gcclibs --with-gmp=$gcclibs
+	cd $PROJECT_SRCS/$CURRENT_LIBR
+	./configure --prefix=$PROJECT_LIBS --with-gmp=$PROJECT_LIBS
 	make && make check && make install
 else
 	echo "Ok. Finished."
 fi
 
 ############################################### 
-curr_lib="mpc-1.0.2"
+CURRENT_LIBR="mpc-1.0.2"
 echo "=================================="
-echo "Install $curr_lib. Continue? (y/n)"
+echo "Install $CURRENT_LIBR. Continue? (y/n)"
 echo "=================================="
 read user_option
 
 if test $user_option = "y"
 then
-	cd $gccsources/$curr_lib
-	./configure --prefix=$gcclibs
+	cd $PROJECT_SRCS/$CURRENT_LIBR
+	./configure --prefix=$PROJECT_LIBS
 	make && make check && make install
 else
 	echo "Ok. Finished."
 fi
 
 ############################################### 
-curr_lib="automake-1.9"
+CURRENT_LIBR="automake-1.9"
 echo "=================================="
-echo "Install $curr_lib. Continue? (y/n)"
+echo "Install $CURRENT_LIBR. Continue? (y/n)"
 echo "=================================="
 read user_option
 
 if test $user_option = "y"
 then
-	cd $gccsources/$curr_lib
-	./configure --prefix=$gcclibs
+	cd $PROJECT_SRCS/$CURRENT_LIBR
+	./configure --prefix=$PROJECT_LIBS
 	make && make check && make install
 else
 	echo "Ok. Finished."
 fi
 	
 ############################################### 
-curr_lib="autoconf-2.69"
+CURRENT_LIBR="autoconf-2.69"
 echo "=================================="
-echo "Install $curr_lib. Continue? (y/n)"
+echo "Install $CURRENT_LIBR. Continue? (y/n)"
 echo "=================================="
 read user_option
 
 if test $user_option = "y"
 then
-	cd $gccsources/$curr_lib
-	./configure --prefix=$gcclibs
+	cd $PROJECT_SRCS/$CURRENT_LIBR
+	./configure --prefix=$PROJECT_LIBS
 	make && make check && make install
 else
 	echo "Ok. Finished."
 fi
 
 ############################################### 
-curr_lib="flex-2.5.37"
+CURRENT_LIBR="flex-2.5.37"
 echo "=================================="
-echo "Install $curr_lib. Continue? (y/n)"
+echo "Install $CURRENT_LIBR. Continue? (y/n)"
 echo "=================================="
 read user_option
 
 if test $user_option = "y"
 then
-	cd $gccsources/$curr_lib
-	./configure --prefix=$gcclibs
+	cd $PROJECT_SRCS/$CURRENT_LIBR
+	./configure --prefix=$PROJECT_LIBS
 	make && make check && make install
 else
 	echo "Ok. Finished."
 fi
 
 ############################################### 
-curr_lib="binutils-2.24"
+CURRENT_LIBR="binutils-2.24"
 echo "=================================="
-echo "Install $curr_lib. Continue? (y/n)"
+echo "Install $CURRENT_LIBR. Continue? (y/n)"
 echo "=================================="
 read user_option
 
 if test $user_option = "y"
 then
-	cd $gccsources/$curr_lib
-	./configure --prefix=$gcclibs --verbose --disable-nls --target=arm-none-eabi
+	cd $PROJECT_SRCS/$CURRENT_LIBR
+	./configure --prefix=$PROJECT_LIBS --verbose --disable-nls --target=arm-none-eabi
 	make && make check && make install
 else
 	echo "Ok. Finished."
 fi
 
 
-############################################### 
-echo "=========================================================="
-echo "This step will include $gcclibs in PATH. Continue? (y/n)"
-echo "=========================================================="
-read user_option
-
-if test $user_option = "y"
-then
-	PATH=$gcclibs/bin:$PATH
-else
-	echo "Ok. Finished."
-fi
 
 
 
