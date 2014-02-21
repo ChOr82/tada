@@ -103,27 +103,6 @@ else
 fi
 
 ############################################### 
-CURRENT_LIBR="automake-1.9"
-echo "=================================="
-echo "Install $CURRENT_LIBR. Continue? (y/n)"
-echo "=================================="
-if test $noselect = "a"
-then
-	user_option="y"
-else
-	read user_option
-fi
-
-if test $user_option = "y"
-then
-	cd $PROJECT_SRCS/$CURRENT_LIBR
-	./configure --prefix=$PROJECT_LIBS
-	make && make check && make install
-else
-	echo "Ok. Finished."
-fi
-	
-############################################### 
 CURRENT_LIBR="autoconf-2.69"
 echo "=================================="
 echo "Install $CURRENT_LIBR. Continue? (y/n)"
@@ -144,6 +123,27 @@ else
 	echo "Ok. Finished."
 fi
 
+############################################### 
+CURRENT_LIBR="automake-1.9"
+echo "=================================="
+echo "Install $CURRENT_LIBR. Continue? (y/n)"
+echo "=================================="
+if test $noselect = "a"
+then
+	user_option="y"
+else
+	read user_option
+fi
+
+if test $user_option = "y"
+then
+	cd $PROJECT_SRCS/$CURRENT_LIBR
+	./configure --prefix=$PROJECT_LIBS
+	make && make check && make install
+else
+	echo "Ok. Finished."
+fi
+	
 ############################################### 
 CURRENT_LIBR="flex-2.5.37"
 echo "=================================="
