@@ -12,11 +12,23 @@ echo "= Installation from gcc dependencies will start for libraries ="
 echo "===============================================================" && echo
 
 ############################################### 
+echo "==================================="
+echo "Install all(a) or select libraries?"
+echo "==================================="
+read noselect
+
+############################################### 
 CURRENT_LIBR="m4-1.4.17"
 echo "=================================="
 echo "Install $CURRENT_LIBR. Continue? (y/n)"
 echo "=================================="
-read user_option
+
+if test $noselect = "a"
+then
+	user_option="y"
+else
+	read user_option
+fi
 
 if test $user_option = "y"
 then
@@ -32,7 +44,12 @@ CURRENT_LIBR="gmp-5.1.3"
 echo "=================================="
 echo "Install $CURRENT_LIBR. Continue? (y/n)"
 echo "=================================="
-read user_option
+if test $noselect = "a"
+then
+	user_option="y"
+else
+	read user_option
+fi
 
 if test $user_option = "y"
 then
@@ -48,7 +65,12 @@ CURRENT_LIBR="mpfr-3.1.2"
 echo "=================================="
 echo "Install $CURRENT_LIBR. Continue? (y/n)"
 echo "=================================="
-read user_option
+if test $noselect = "a"
+then
+	user_option="y"
+else
+	read user_option
+fi
 
 if test $user_option = "y"
 then
@@ -64,12 +86,17 @@ CURRENT_LIBR="mpc-1.0.2"
 echo "=================================="
 echo "Install $CURRENT_LIBR. Continue? (y/n)"
 echo "=================================="
-read user_option
+if test $noselect = "a"
+then
+	user_option="y"
+else
+	read user_option
+fi
 
 if test $user_option = "y"
 then
 	cd $PROJECT_SRCS/$CURRENT_LIBR
-	./configure --prefix=$PROJECT_LIBS
+	./configure --prefix=$PROJECT_LIBS --with-gmp=$PROJECT_LIBS
 	make && make check && make install
 else
 	echo "Ok. Finished."
@@ -80,7 +107,12 @@ CURRENT_LIBR="automake-1.9"
 echo "=================================="
 echo "Install $CURRENT_LIBR. Continue? (y/n)"
 echo "=================================="
-read user_option
+if test $noselect = "a"
+then
+	user_option="y"
+else
+	read user_option
+fi
 
 if test $user_option = "y"
 then
@@ -96,7 +128,12 @@ CURRENT_LIBR="autoconf-2.69"
 echo "=================================="
 echo "Install $CURRENT_LIBR. Continue? (y/n)"
 echo "=================================="
-read user_option
+if test $noselect = "a"
+then
+	user_option="y"
+else
+	read user_option
+fi
 
 if test $user_option = "y"
 then
@@ -112,7 +149,13 @@ CURRENT_LIBR="flex-2.5.37"
 echo "=================================="
 echo "Install $CURRENT_LIBR. Continue? (y/n)"
 echo "=================================="
-read user_option
+if test $noselect = "a"
+then
+	user_option="y"
+else
+	read user_option
+fi
+
 
 if test $user_option = "y"
 then
@@ -128,7 +171,13 @@ CURRENT_LIBR="binutils-2.24"
 echo "=================================="
 echo "Install $CURRENT_LIBR. Continue? (y/n)"
 echo "=================================="
-read user_option
+if test $noselect = "a"
+then
+	user_option="y"
+else
+	read user_option
+fi
+
 
 if test $user_option = "y"
 then
