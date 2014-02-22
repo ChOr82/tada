@@ -1,4 +1,4 @@
-## Welcome to TAda project ##
+﻿## Welcome to TAda project ##
 
 **Tiva Ada** is a cross-compiler for build Ada code in Tiva board.
 
@@ -124,10 +124,37 @@ This build is done using Ubuntu 13.10 32 bits.
 
 4. Build the native gcc compiler.
 
-	cd gcc-native
-	../sources/gcc-4.8.2/configure --prefix=/opt/tada/target --enable-languages=c,ada,lto --no-recursion
+	cd gcc-native  
+	../sources/gcc-4.8.2/configure --prefix=/opt/tada/target --enable-languages=c,ada,c++  
+
+	at this point we got:  
+
+	blablabla ...  
+	configure: error: GNAT is required to build ada  
+	make: *** No targets speficied and no makefile found. Stop.  
+
+	so ...  
+	sudo apt-get install gnat  
+		
+	and try again...  
+
+	cd gcc-native  
+	../sources/gcc-4.8.2/configure --prefix=/opt/tada/target --enable-languages=c,ada,c++  
+
+	but again:  
+
+	blablabla ...   
+	configure: error: GNAT is required to build ada  
+	make: *** No targets speficied and no makefile found. Stop.  
+
+	wonder why...  
+
+---
+
 	make
-	# it can take lots of time here.
+	make install
+	
+
 
 #### References ####
 
